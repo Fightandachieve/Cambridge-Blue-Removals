@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Instant Quote | Cambridge Blue Removals</title>
+  <meta name="description" content="Get an instant estimated moving cost from Cambridge Blue Removals based on property size, distance and selected services.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div data-site-header></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#8ad0ff">Instant quote</span>
+      <h1>Get your instant moving estimate.</h1>
+      <p class="lead">Choose your move details and see an estimated cost immediately. We will contact you afterwards to confirm the final quote, discounts and any services that need a manual price.</p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get an Instant Moving Estimate</h2>
+        <p class="lead">The automatic estimate uses your property size, approximate distance, packing choice and optional dismantling & reassembly.</p>
+        <div class="notice"><strong>Please note:</strong> the price shown is an estimate and not a final confirmed quotation. Your final price may change after we check access, parking, actual volume, specialist items and any unpriced optional services. After you send your request, a member of the Cambridge Blue Removals team will contact you to confirm the details, apply any eligible discounts and finalise your quotation.</div>
+      </div>
+
+      <div class="quote-layout">
+        <form class="quote-form" id="quoteForm">
+          <fieldset>
+            <legend>1. Journey</legend>
+            <div class="form-grid">
+              <div class="field"><label for="fromPostcode">Moving from postcode</label><input id="fromPostcode" placeholder="e.g. CB1 3UB"></div>
+              <div class="field"><label for="toPostcode">Moving to postcode</label><input id="toPostcode" placeholder="e.g. CB4 1AA"></div>
+              <div class="field full">
+                <button type="button" class="btn btn-outline" id="calculateDistance">Calculate approximate distance</button>
+                <div class="distance-status" id="distanceStatus">Enter both UK postcodes to calculate a rough road-distance estimate. You can edit the mileage manually.</div>
+              </div>
+              <div class="field full"><label for="distanceMiles">Distance between properties (miles)</label><input id="distanceMiles" type="number" min="0" step="0.1" value="0"><span class="small">The fixed property price includes up to 30 miles. Mileage over 30 miles is currently charged at £2 per mile.</span></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Property & access</legend>
+            <div class="form-grid">
+              <div class="field"><label for="bedrooms">Property size</label><select id="bedrooms"><option value="1">1 bedroom</option><option value="2" selected>2 bedrooms</option><option value="3">3 bedrooms</option><option value="4+">4+ bedrooms</option></select></div>
+              <div class="field"><label for="boxes">Approximate number of boxes</label><select id="boxes"><option value="0-10">0–10</option><option value="11-20">11–20</option><option value="21-40" selected>21–40</option><option value="41-60">41–60</option><option value="61+">61+</option></select><span class="small">Used to help us confirm the final quote; it does not currently change the automatic estimate.</span></div>
+
+              <div class="field"><label for="oldFloor">Floors / level at old property</label><select id="oldFloor"><option value="0">Ground floor</option><option value="1">1 floor</option><option value="2">2 floors</option><option value="3">3 floors</option><option value="4">4 floors</option><option value="5">5+ floors</option></select></div>
+              <div class="field"><label for="oldLift">Lift available at old property?</label><select id="oldLift"><option value="no">No</option><option value="yes">Yes</option></select></div>
+              <div class="field"><label for="newFloor">Floors / level at new property</label><select id="newFloor"><option value="0">Ground floor</option><option value="1">1 floor</option><option value="2">2 floors</option><option value="3">3 floors</option><option value="4">4 floors</option><option value="5">5+ floors</option></select></div>
+              <div class="field"><label for="newLift">Lift available at new property?</label><select id="newLift"><option value="no">No</option><option value="yes">Yes</option></select></div>
+              <div class="field full"><div class="notice">Total selected floors across both locations: <strong id="totalFloors">0</strong>. Floors and lift access are recorded for the final confirmation call and do not currently change the automatic estimate.</div></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Date & pickup time</legend>
+            <div class="form-grid">
+              <div class="field"><label for="movingDate">Moving day</label><input id="movingDate" type="date"></div>
+              <div class="field"><label for="pickupTime">Preferred pickup time</label><input id="pickupTime" type="time"></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Services</legend>
+            <div class="option-grid">
+              <label class="checkline"><input id="packing" type="checkbox"> <span><strong>Packing service</strong><br><span class="small" id="packingPriceLabel">Price depends on property size.</span></span></label>
+              <label class="checkline"><input id="dismantlingReassembly" type="checkbox"> <span><strong>Dismantling & Reassembly</strong><br><span class="small">£100</span></span></label>
+              <label class="checkline"><input id="unpacking" type="checkbox"> <span><strong>Unpacking service</strong><br><span class="small">Price confirmed by our team.</span></span></label>
+              <label class="checkline"><input id="fragile" type="checkbox"> <span><strong>Fragile items</strong><br><span class="small">Tell us more below; price confirmed if needed.</span></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>5. Large / specialist items <span class="manual-tag">Optional</span></legend>
+            <p class="small">This section is not mandatory and does not change the instant estimate. If you have a piano, American fridge/freezer, safe, large wardrobe, large TV, artwork, gym equipment or another unusual item, describe it here. Otherwise, leave it blank.</p>
+            <div class="field"><label for="largeItems">Large / specialist items</label><textarea id="largeItems" rows="4" placeholder="Example: 1 piano, 1 American fridge, 2 large wardrobes... (optional)"></textarea></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>6. Partner services & storage</legend>
+            <div class="form-grid">
+              <div class="field"><label for="cleaning">Would you like end-of-tenancy cleaning for the property you are leaving?</label><select id="cleaning"><option value="no">No</option><option value="yes">Yes — tell me about the partner discount</option></select><span class="small">Supplied by an independent cleaning partner. Not included in the automatic estimate.</span></div>
+              <div class="field"><label for="transport">Would you like discounted passenger transport between properties?</label><select id="transport"><option value="no">No</option><option value="yes">Yes — tell me about the partner offer</option></select><span class="small">Supplied by an independent transport partner. Not included in the automatic estimate.</span></div>
+              <div class="field full"><label for="storage">Do you need storage?</label><select id="storage"><option value="none">No storage required</option><option value="1 day">1 day</option><option value="2–7 days">2–7 days</option><option value="1–2 weeks">1–2 weeks</option><option value="3–4 weeks">3–4 weeks</option><option value="1 month">1 month</option><option value="2 months">2 months</option><option value="3 months">3 months</option><option value="4 months">4 months</option><option value="5 months">5 months</option><option value="6 months">6 months</option><option value="7 months">7 months</option><option value="8 months">8 months</option><option value="9 months">9 months</option><option value="10 months">10 months</option><option value="11 months">11 months</option><option value="12 months">12 months</option></select><span class="small">Storage is not automatically priced. After receiving your quote request, we will obtain availability/pricing from our storage partners and discuss the offer with you during the final confirmation call.</span></div>
+            </div>
+          </fieldset>
+
+          <div class="quote-note">Large/specialist items, floors, lift access, boxes, unpacking, fragile items, cleaning, passenger transport and storage are recorded for your quote request but are not currently added to the automatic price.</div>
+          <div style="margin-top:22px"><button class="btn btn-primary" type="submit">Continue & Request My Quote</button></div>
+        </form>
+
+        <aside class="quote-result">
+          <span class="eyebrow" style="color:#8ad0ff">Your estimated moving cost</span>
+          <div class="quote-price" id="estimatePrice">£550</div>
+          <p class="small" style="color:#dceef8">Guide estimate only. Your final quotation will be confirmed by our team.</p>
+          <h3>Estimate breakdown</h3>
+          <div class="breakdown" id="breakdown"></div>
+          <p id="vatNote" class="small" style="color:#dceef8"></p>
+          <hr style="border:0;border-top:1px solid rgba(255,255,255,.14);margin:24px 0">
+          <h3>Included in the automatic calculation</h3>
+          <p>Property-size fixed price (including up to 30 miles), extra mileage over 30 miles, packing if selected, and dismantling & reassembly if selected.</p>
+          <h3>Confirmed manually</h3>
+          <p>Access/floors, lifts, box volume, large or specialist items, fragile items, unpacking, storage and partner services.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal-backdrop" id="quoteModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle">
+    <div class="modal-head">
+      <div><span class="eyebrow">Final step</span><h2 id="quoteModalTitle">Send your quote request</h2><p class="small">Only Full Name and Email are required. The other fields are optional.</p></div>
+      <button type="button" class="modal-close" id="closeQuoteModal" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="readonly-box">
+        <strong>Your Estimated Moving Cost</strong>
+        <div class="readonly-price" id="modalEstimate">£0</div>
+        <span class="small">This is our calculator estimate, not your personal budget and not yet the final confirmed quotation.</span>
+      </div>
+
+      <form id="requestForm">
+        <div class="form-grid">
+          <div class="field"><label for="fullName">Full Name *</label><input id="fullName" name="Full name" required autocomplete="name"></div>
+          <div class="field"><label for="requestEmail">Email *</label><input id="requestEmail" name="Email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="telephone">Telephone</label><input id="telephone" name="Telephone" autocomplete="tel"></div>
+          <div class="field"><label for="budget">Your Budget (optional)</label><input id="budget" name="Customer budget" type="number" min="0" step="1" placeholder="£"><span class="small">Your own target budget for the move.</span></div>
+          <div class="field full"><label for="preferredTimeframe">Preferred timeframe</label><select id="preferredTimeframe" name="Preferred timeframe"><option value="Flexible">Flexible</option><option value="Morning">Morning</option><option value="Afternoon">Afternoon</option><option value="Evening">Evening</option><option value="Exact pickup time entered above">Exact pickup time entered above</option></select></div>
+          <div class="field full"><label for="additionalComments">Additional comments</label><textarea id="additionalComments" name="Additional comments" rows="5" placeholder="Anything else you would like us to know?"></textarea></div>
+        </div>
+        <label class="checkline" style="margin-top:16px"><input id="contactConsent" type="checkbox"> I agree to be contacted regarding this quote request.</label>
+        <p class="small">Fields marked * are required. Providing the other details can help us confirm your quote faster.</p>
+        <button class="btn btn-primary" type="submit">Send My Quote Request</button>
+        <p id="submitMessage" class="small" style="margin-top:12px"></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div data-site-footer></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/quote.js"></script>
+</body>
+</html>
