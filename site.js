@@ -13,7 +13,7 @@
     header.innerHTML = `
       <header class="site-header">
         <div class="container header-inner">
-          <a class="brand" href="index.html" aria-label="${c.business.name} home"><img src="assets/images/logo.png" alt="${c.business.name} logo"></a>
+          <a class="brand" href="index.html" aria-label="${c.business.name} home"><img src="logo.png" alt="${c.business.name} logo"></a>
           <button class="menu-toggle" type="button" aria-label="Open menu">Menu</button>
           <nav class="site-nav" aria-label="Main navigation">
             ${navItems.map(([href,label]) => `<a href="${href}" ${current===href?'aria-current="page"':''}>${label}</a>`).join('')}
