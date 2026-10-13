@@ -181,7 +181,6 @@ return;
     msg.textContent=`Your email app should open with the quote request. Reference: ${reference}. Connect a form backend in config.js before launch for direct website submission.`;
   });
 const closeSuccessPopup = document.getElementById('closeSuccessPopup');
-const successPopup = document.getElementById('successPopup');
 
 closeSuccessPopup?.addEventListener('click', () => {
   successPopup?.classList.remove('show');
