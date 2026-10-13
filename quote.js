@@ -162,13 +162,14 @@
        modal.classList.remove('open');
 modal.setAttribute('aria-hidden', 'true');
 
-alert(`✓ Quote Request Sent Successfully!
+const successPopup = document.getElementById('successPopup');
+const successReference = document.getElementById('successReference');
 
-Thank you! Your quote request has been received.
-
-Reference: ${reference}
-
-We will contact you to confirm your final quotation.`);
+if (successPopup && successReference) {
+  successReference.textContent = reference;
+  successPopup.classList.add('show');
+  successPopup.setAttribute('aria-hidden', 'false');
+}
 
 return;
       }catch(err){msg.textContent='The online form could not be sent. Your email app will open instead.';}
