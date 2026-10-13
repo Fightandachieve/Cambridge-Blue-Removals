@@ -62,12 +62,35 @@
   wa.target = '_blank'; wa.rel='noopener'; wa.title='WhatsApp'; wa.textContent='WA';
   document.body.appendChild(wa);
 
-  const cookieKey='cbr_cookie_notice';
-  if (!localStorage.getItem(cookieKey)) {
-    const cookie = document.createElement('div');
-    cookie.className='cookie-banner show';
-    cookie.innerHTML=`<p><strong>Cookies:</strong> this starter site uses essential browser storage for basic preferences. Review the final cookie setup before launch. <a href="cookies.html">Learn more</a>.</p><button class="btn btn-primary" type="button">OK</button>`;
-    cookie.querySelector('button').addEventListener('click',()=>{localStorage.setItem(cookieKey,'accepted');cookie.remove();});
-    document.body.appendChild(cookie);
-  }
+  const cookieKey = 'cbr_cookie_consent';
+
+if (!localStorage.getItem(cookieKey)) {
+  const cookie = document.createElement('div');
+  cookie.className = 'cookie-banner show';
+
+  cookie.innerHTML = `
+    <p>
+      <strong>We value your privacy.</strong>
+      We use essential storage to make the website work. With your permission,
+      we also use Google Analytics to understand how visitors use our website.
+      <a href="cookies.html">Learn more</a>.
+    </p>
+    <div class="cookie-actions">
+      <button class="btn btn-primary accept-analytics" type="button">Accept Analytics</button>
+      <button class="btn btn-outline reject-analytics" type="button">Reject Analytics</button>
+    </div>
+  `;
+
+  cookie.querySelector('.accept-analytics').addEventListener('click', () => {
+    localStorage.setItem(cookieKey, 'accepted');
+    cookie.remove();
+  });
+
+  cookie.querySelector('.reject-analytics').addEventListener('click', () => {
+    localStorage.setItem(cookieKey, 'rejected');
+    cookie.remove();
+  });
+
+  document.body.appendChild(cookie);
+}
 })();
