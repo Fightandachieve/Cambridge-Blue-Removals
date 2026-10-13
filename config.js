@@ -75,7 +75,7 @@ window.SITE_CONFIG = {
     vatNote: "",
 
     // Optional form backend (e.g. Formspree). Leave blank for mailto fallback.
-    formEndpoint: ""
+    formEndpoint:"https://formspree.io/f/maeqpwoz"
   },
 
   tracking: {
