@@ -132,6 +132,9 @@
   requestForm?.addEventListener('submit', async e => {
     e.preventDefault();
     if(!requestForm.reportValidity()) return;
+    if (typeof gtag === 'function') {
+  gtag('event', 'quote_submitted');
+}
     const details=collectQuoteDetails();
     const reference=makeReference();
     const payload={
