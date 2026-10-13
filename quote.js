@@ -159,8 +159,18 @@
         msg.textContent='Sending…';
         const r=await fetch(q.formEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
         if(!r.ok) throw new Error('Submit failed');
-        msg.textContent=`Thank you. Your quote request has been received. Reference: ${reference}. We will contact you to confirm the final quotation, discounts and any partner/manual-price services.`;
-        return;
+       modal.classList.remove('open');
+modal.setAttribute('aria-hidden', 'true');
+
+alert(`✓ Quote Request Sent Successfully!
+
+Thank you! Your quote request has been received.
+
+Reference: ${reference}
+
+We will contact you to confirm your final quotation.`);
+
+return;
       }catch(err){msg.textContent='The online form could not be sent. Your email app will open instead.';}
     }
 
