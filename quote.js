@@ -85,7 +85,11 @@
     calculateEstimate();
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');
-    if (typeof gtag === 'function') {
+   if (typeof gtag === 'function') {
+  gtag('event', 'quote_calculated', {
+    value: latestEstimate,
+    currency: 'GBP'
+  });
   gtag('event', 'quote_request_opened');
 }
     setTimeout(()=>$('fullName')?.focus(),50);
