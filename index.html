@@ -3,10 +3,18 @@
 <head><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVS1JXBCQ9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YVS1JXBCQ9');
+ window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+/* Google Analytics consent */
+const analyticsConsent = localStorage.getItem('cbr_cookie_consent');
+
+gtag('consent', 'default', {
+  'analytics_storage': analyticsConsent === 'accepted' ? 'granted' : 'denied'
+});
+
+gtag('js', new Date());
+gtag('config', 'G-YVS1JXBCQ9');
 </script>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cambridge Blue Removals | Removals, Packing & Move Tracking</title>
