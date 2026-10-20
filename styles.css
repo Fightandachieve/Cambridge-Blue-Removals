@@ -264,12 +264,14 @@ p{margin-top:0}.lead{font-size:1.08rem;color:var(--muted)}.small{font-size:.9rem
   }
 
   .site-header .header-cta {
-    flex: 0 0 auto;
-    margin-left: 20px;
-    padding: 16px 22px;
-    font-size: 15px;
-    border-radius: 8px;
-  }
+  flex: 0 0 auto;
+  margin-left: 20px;
+  padding: 20px 30px;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 8px;
+  white-space: nowrap;
+}
 }
 .home-quote-section .quote-form .btn-primary { border-radius:8px; }
 @media(max-width:1200px) { .header-inner { gap:11px; } .site-nav { gap:10px; } .site-nav a { font-size:.76rem; } .brand img { max-width:170px; } .header-phone { font-size:.78rem; } .header-cta { font-size:.75rem; padding:11px; } }
