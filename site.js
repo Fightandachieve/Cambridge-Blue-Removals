@@ -3,10 +3,13 @@
   if (!c) return;
 
   const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  const navItems = [
-    ['index.html','Home'],['services.html','Services'],['about.html','About'],['faqs.html','FAQs'],
-    ['reviews.html','Reviews'],['blog.html','Blog'],['contact.html','Contact'],['discounts.html','Discounts']
-  ];
+const navItems = [
+  ['index.html', 'Home'],
+  ['services.html', 'Services'],
+  ['reviews.html', 'Reviews'],
+  ['discounts.html', 'Discounts'],
+  ['contact.html', 'Contact']
+];
 
   const header = document.querySelector('[data-site-header]');
   if (header) {
