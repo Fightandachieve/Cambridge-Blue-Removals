@@ -141,6 +141,10 @@ p{margin-top:0}.lead{font-size:1.08rem;color:var(--muted)}.small{font-size:.9rem
 }
 
 .home-hero .hero-content {
+  width: calc(100% - 120px);
+  max-width: none;
+  margin-left: 60px;
+  margin-right: 60px;
   padding: 90px 0 85px;
 }
 
