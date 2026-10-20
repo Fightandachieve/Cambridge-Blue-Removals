@@ -19,7 +19,6 @@
             ${navItems.map(([href,label]) => `<a href="${href}" ${current===href?'aria-current="page"':''}>${label}</a>`).join('')}
             <a href="tracking.html">Track Your Move</a>
           </nav>
-          <a class="header-phone" href="tel:${c.business.phone}" aria-label="Call ${c.business.phoneDisplay}">☎ <span>${c.business.phoneDisplay}</span></a>
           <a class="btn btn-primary header-cta" href="${current === 'index.html' ? '#instant-quote' : 'quote.html'}">Get an Instant Quote <span aria-hidden="true">→</span></a>
         </div>
       </header>`;
