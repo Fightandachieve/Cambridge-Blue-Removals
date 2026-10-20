@@ -129,31 +129,62 @@ p{margin-top:0}.lead{font-size:1.08rem;color:var(--muted)}.small{font-size:.9rem
 .header-cta { margin-left:0; padding:12px 15px; font-size:.81rem; white-space:nowrap; }
 .btn-primary { background:linear-gradient(120deg,#f8d48a,#eeb95a); color:#09223c; border-radius:7px; box-shadow:0 5px 16px rgba(0,0,0,.1); }
 .btn-ghost { border-radius:7px; }
-.home-hero { min-height:540px; background:linear-gradient(90deg,rgba(3,24,45,.97) 0%,rgba(3,27,49,.84) 36%,rgba(3,27,49,.18) 76%),url('hero-van.png') center 48%/cover no-repeat; }
-.home-hero .hero-content { padding:76px 0 78px; }
-.home-hero .eyebrow { color:var(--gold); font-size:.79rem; letter-spacing:.17em; }
-.home-hero h1 { font-size:clamp(2.8rem,5vw,4.6rem); line-height:1.01; max-width:570px; margin:0 0 20px; letter-spacing:-.045em; }
-.home-hero h1 em { color:var(--gold); font-style:normal; }
-.home-hero .lead { color:#f1f5f9; max-width:495px; font-size:1.02rem; }
-.home-hero .hero-actions { margin:25px 0 34px; }
-.home-hero .hero-proof { color:#f3f6fa; font-size:.83rem; gap:12px 22px; }
+.home-hero {
+  min-height: 680px;
+  background:
+    linear-gradient(90deg,
+      rgba(3,24,45,.95) 0%,
+      rgba(3,27,49,.75) 32%,
+      rgba(3,27,49,.10) 75%
+    ),
+    url("hero-luton.png") center center / cover no-repeat;
+}
+
+.home-hero .hero-content {
+  padding: 90px 0 85px;
+}
+
+.home-hero .eyebrow {
+  color: var(--gold);
+  font-size: .95rem;
+  letter-spacing: .18em;
+  margin-bottom: 18px;
+}
+
+.home-hero h1 {
+  font-size: clamp(3.6rem, 5vw, 5rem);
+  line-height: 1.02;
+  max-width: 580px;
+  margin: 0 0 22px;
+  letter-spacing: -.045em;
+}
+
+.home-hero h1 em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.home-hero .lead {
+  color: #f1f5f9;
+  max-width: 520px;
+  font-size: 1.12rem;
+  line-height: 1.5;
+}
+
+.home-hero .hero-actions {
+  margin: 28px 0 38px;
+}
+
+.home-hero .hero-proof {
+  color: #f3f6fa;
+  font-size: .95rem;
+  gap: 18px 26px;
+}
 .home-quote-section { padding-top:48px; }
 .home-quote-section .section-title { max-width:900px; }
 .home-quote-section .section-title h2 { font-size:clamp(2rem,3.4vw,3rem); }
 .home-quote-section .quote-form { border-top:4px solid var(--gold); }
 .home-quote-section .quote-result { background:linear-gradient(145deg,#052541,#0b426b); }
-/* New Cambridge Luton Van Hero */
-.hero {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 25, 50, .95) 0%,
-      rgba(5, 25, 50, .80) 30%,
-      rgba(5, 25, 50, .25) 65%,
-      rgba(5, 25, 50, .05) 100%
-    ),
-    url("hero-luton.png") center center / cover no-repeat;
-}
 /* Larger website header and existing logo */
 
 .header-inner {
