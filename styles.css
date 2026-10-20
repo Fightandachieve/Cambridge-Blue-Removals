@@ -221,29 +221,54 @@ p{margin-top:0}.lead{font-size:1.08rem;color:var(--muted)}.small{font-size:.9rem
     height: 75px;
   }
 }
-/* Desktop header alignment and navigation */
+/* PREMIUM DESKTOP HEADER */
 @media (min-width: 1201px) {
+
   .site-header .header-inner {
     width: calc(100% - 48px);
     max-width: none;
     margin: 0 24px;
-    justify-content: flex-start;
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
   }
 
   .site-header .brand {
     flex: 0 0 auto;
     min-width: 0;
+    margin-right: 30px;
+  }
+
+  .site-header .brand img {
+    height: 95px;
+    width: auto;
+    object-fit: contain;
   }
 
   .site-header .site-nav {
-  margin-left: 80px;
-  gap: 14px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: 0;
+    gap: 18px;
+  }
 
   .site-header .site-nav a {
     font-size: 24px;
     font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .site-header .header-cta {
+    flex: 0 0 auto;
+    margin-left: 20px;
+    padding: 16px 22px;
+    font-size: 15px;
+    border-radius: 8px;
   }
 }
 .home-quote-section .quote-form .btn-primary { border-radius:8px; }
