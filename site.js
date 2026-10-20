@@ -5,7 +5,7 @@
   const current = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const navItems = [
     ['index.html','Home'],['services.html','Services'],['about.html','About'],['faqs.html','FAQs'],
-    ['reviews.html','Reviews'],['discounts.html','Discounts'],['blog.html','Blog'],['contact.html','Contact']
+    ['reviews.html','Reviews'],['blog.html','Blog'],['contact.html','Contact'],['discounts.html','Discounts']
   ];
 
   const header = document.querySelector('[data-site-header]');
@@ -14,17 +14,18 @@
       <header class="site-header">
         <div class="container header-inner">
           <a class="brand" href="index.html" aria-label="${c.business.name} home"><img src="logo.png" alt="${c.business.name} logo"></a>
-          <button class="menu-toggle" type="button" aria-label="Open menu">Menu</button>
+          <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
           <nav class="site-nav" aria-label="Main navigation">
             ${navItems.map(([href,label]) => `<a href="${href}" ${current===href?'aria-current="page"':''}>${label}</a>`).join('')}
             <a href="tracking.html">Track Your Move</a>
           </nav>
-          <a class="btn btn-primary header-cta" href="quote.html">Instant Quote</a>
+          <a class="header-phone" href="tel:${c.business.phone}" aria-label="Call ${c.business.phoneDisplay}">☎ <span>${c.business.phoneDisplay}</span></a>
+          <a class="btn btn-primary header-cta" href="${current === 'index.html' ? '#instant-quote' : 'quote.html'}">Get an Instant Quote <span aria-hidden="true">→</span></a>
         </div>
       </header>`;
     const toggle = header.querySelector('.menu-toggle');
     const nav = header.querySelector('.site-nav');
-    toggle?.addEventListener('click', () => nav.classList.toggle('open'));
+    toggle?.addEventListener('click', () => { const isOpen = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(isOpen)); });
   }
 
   const footer = document.querySelector('[data-site-footer]');
