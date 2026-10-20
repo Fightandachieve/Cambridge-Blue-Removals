@@ -186,10 +186,36 @@ p{margin-top:0}.lead{font-size:1.08rem;color:var(--muted)}.small{font-size:.9rem
 }
 
 .home-hero .hero-proof {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 45px;
   color: #ffffff;
-  font-size: 1.24rem;
-  font-weight: 700;
-  gap: 18px 26px;
+}
+
+.home-hero .hero-benefit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.home-hero .benefit-icon {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.home-hero .hero-benefit strong {
+  display: block;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.home-hero .hero-benefit small {
+  display: block;
+  color: #e6edf5;
+  font-size: 15px;
+  margin-top: 4px;
 }
 .home-quote-section { padding-top:48px; }
 .home-quote-section .section-title { max-width:900px; }
